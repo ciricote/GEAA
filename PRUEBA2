@@ -1,0 +1,4 @@
+type	name	label::English	hint::English	required	appearance
+text	NOMBRE DEL PROYECTO	NOMBRE DEL PROYECTO	SITIO DONDE SE REALIZA LA AUDITORÍA	yes	
+text	PUNTO DE MUESTREO	NOMBRE	Descripción del sitio registrado.	yes	
+select_one choices_CATEGORÍA DE MANEJO	CATEGORÍA DE MANEJO	CARACTERISTICAS DE MANEJO DE RESIDUOS	Describa si el punto registrado corresponde a un contenedor de residuos, un sitio de almacenamiento u otros.	yes	label
