@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:jr="http://openrosa.org/javarosa" xmlns:orx="http://openrosa.org/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <h:head>
+    <h:title>MANEJO DE RESIDUOS</h:title>
+    <model>
+      <instance>
+        <SURVEY_MANEJO_RESIDUOS id="manejo_residuos">
+          <nombre/>
+          <descripcion/>
+          <fecha/>
+          <gps_location/>
+          <zona/>
+          <categoria_bote/>
+          <etiqueta/>
+          <tipo_residuo/>
+          <coincide_residuo/>
+          <volumen/>
+          <porcentaje/>
+          <mezcla/>
+          <mezcla_residuo/>
+          <foto_contenedor/>
+          <observaciones/>
+          <meta>
+            <instanceID/>
+          </meta>
+        </SURVEY_MANEJO_RESIDUOS>
+      </instance>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/nombre" type="string"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/descripcion" type="string"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/fecha" type="date"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/gps_location" type="geopoint"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/zona" type="select1"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/categoria_bote" type="select1"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/etiqueta" type="select1"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/tipo_residuo" type="select1"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/coincide_residuo" type="select1"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/volumen" type="int"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/porcentaje" type="int"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/mezcla" type="select1"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/mezcla_residuo" type="select"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/foto_contenedor" type="binary"/>
+      <bind nodeset="/SURVEY_MANEJO_RESIDUOS/observaciones" type="string"/>
+      <bind calculate="concat('uuid:', uuid())" nodeset="/SURVEY_MANEJO_RESIDUOS/meta/instanceID" readonly="true()" type="string"/>
+    </model>
+  </h:head>
+  <h:body>
+    <input ref="/SURVEY_MANEJO_RESIDUOS/nombre">
+      <label>NOMBRE DEL HOTEL</label>
+    </input>
+    <input ref="/SURVEY_MANEJO_RESIDUOS/descripcion">
+      <label>DESCRIPCIÓN</label>
+    </input>
+    <input ref="/SURVEY_MANEJO_RESIDUOS/fecha">
+      <label>FECHA</label>
+    </input>
+    <input ref="/SURVEY_MANEJO_RESIDUOS/gps_location">
+      <label>UBICACIÓN GEOGRÁFICA DEL SITO DE MUESTRA</label>
+    </input>
+    <select1 ref="/SURVEY_MANEJO_RESIDUOS/zona">
+      <label>ZONA DEL HOTEL DONDE SE UBICA EL SITIO</label>
+      <item>
+        <label>COCINAS</label>
+        <value>cocina</value>
+      </item>
+      <item>
+        <label>AREAS PUBLICAS</label>
+        <value>area_publica</value>
+      </item>
+      <item>
+        <label>ALBERCAS</label>
+        <value>alberca</value>
+      </item>
+      <item>
+        <label>RESTAURANTES</label>
+        <value>restaurante</value>
+      </item>
+      <item>
+        <label>LOBBY</label>
+        <value>lobby</value>
+      </item>
+      <item>
+        <label>AREA DE MANTENIMIENTO</label>
+        <value>mantenimiento</value>
+      </item>
+    </select1>
+    <select1 ref="/SURVEY_MANEJO_RESIDUOS/categoria_bote">
+      <label>TIPO DE CONTENEDOR O ALMACEN</label>
+      <item>
+        <label>CONTENEDOR 1 ENTRADA</label>
+        <value>con_1</value>
+      </item>
+      <item>
+        <label>CONTENEDOR 2 ENTRADAS</label>
+        <value>con_2</value>
+      </item>
+      <item>
+        <label>CONTENEDOR 3 ENTRADAS</label>
+        <value>con_3</value>
+      </item>
+      <item>
+        <label>ALMACEN TEMPORAL DE RESIDUOS RECICLABLES</label>
+        <value>al_res_rec</value>
+      </item>
+      <item>
+        <label>ALMACEN TEMPORAL CAMARA SECA</label>
+        <value>alm_cam_seca</value>
+      </item>
+      <item>
+        <label>ALMACEN TEMPORAL CAMARA FRIA</label>
+        <value>alm_cam_fria</value>
+      </item>
+      <item>
+        <label>ALMACEN TEMPORAL DE RESIDUOS DE MANEJO ESPECIAL</label>
+        <value>alm_rme</value>
+      </item>
+      <item>
+        <label>ALMACEN TEMPORAL DE RESIDUOS PELIGROSOS</label>
+        <value>alm_rp</value>
+      </item>
+    </select1>
+    <select1 ref="/SURVEY_MANEJO_RESIDUOS/etiqueta">
+      <label>CUENTA CON ETIQUETA</label>
+      <item>
+        <label>SI</label>
+        <value>si</value>
+      </item>
+      <item>
+        <label>NO</label>
+        <value>no</value>
+      </item>
+    </select1>
+    <select1 ref="/SURVEY_MANEJO_RESIDUOS/tipo_residuo">
+      <label>TIPO DE RESIDUO ETIQUETADO</label>
+      <item>
+        <label>PAPEL</label>
+        <value>papel</value>
+      </item>
+      <item>
+        <label>CARTON</label>
+        <value>carton</value>
+      </item>
+      <item>
+        <label>METALES</label>
+        <value>metales</value>
+      </item>
+      <item>
+        <label>PLASTICO PET 1</label>
+        <value>plastico_pet1</value>
+      </item>
+      <item>
+        <label>PLASTICO PEAD 2</label>
+        <value>plastico_pead2</value>
+      </item>
+      <item>
+        <label>PLASTICO GENERAL</label>
+        <value>plastico_general</value>
+      </item>
+      <item>
+        <label>MULTICAPA</label>
+        <value>multicapa</value>
+      </item>
+      <item>
+        <label>SIN CLASIFICAR</label>
+        <value>sin_clasificar</value>
+      </item>
+      <item>
+        <label>ORGÁNICO</label>
+        <value>organico</value>
+      </item>
+      <item>
+        <label>RESIDUO PELIGROSO</label>
+        <value>residuo_peligroso</value>
+      </item>
+      <item>
+        <label>RESIDUO DE MANEJO ESPECIAL</label>
+        <value>rme</value>
+      </item>
+    </select1>
+    <select1 ref="/SURVEY_MANEJO_RESIDUOS/coincide_residuo">
+      <label>EL RESIDUO COINCIDE CON LA ETIQUETA</label>
+      <item>
+        <label>SI</label>
+        <value>si</value>
+      </item>
+      <item>
+        <label>NO</label>
+        <value>no</value>
+      </item>
+    </select1>
+    <input ref="/SURVEY_MANEJO_RESIDUOS/volumen">
+      <label>VOLUMEN</label>
+    </input>
+    <input ref="/SURVEY_MANEJO_RESIDUOS/porcentaje">
+      <label>PORCENTAJE DE LLENADO</label>
+    </input>
+    <select1 ref="/SURVEY_MANEJO_RESIDUOS/mezcla">
+      <label>HAY MEZCLA DE RESIDUOS</label>
+      <item>
+        <label>SI</label>
+        <value>si</value>
+      </item>
+      <item>
+        <label>NO</label>
+        <value>no</value>
+      </item>
+    </select1>
+    <select ref="/SURVEY_MANEJO_RESIDUOS/mezcla_residuo">
+      <label>TIPOS DE RESIDUOS ENCONTRADOS EN LA MEZCLA</label>
+      <item>
+        <label>PAPEL</label>
+        <value>papel</value>
+      </item>
+      <item>
+        <label>CARTON</label>
+        <value>carton</value>
+      </item>
+      <item>
+        <label>METALES</label>
+        <value>metales</value>
+      </item>
+      <item>
+        <label>PLASTICO PET 1</label>
+        <value>plastico_pet1</value>
+      </item>
+      <item>
+        <label>PLASTICO PEAD 2</label>
+        <value>plastico_pead2</value>
+      </item>
+      <item>
+        <label>PLASTICO GENERAL</label>
+        <value>plastico_general</value>
+      </item>
+      <item>
+        <label>MULTICAPA</label>
+        <value>multicapa</value>
+      </item>
+      <item>
+        <label>SIN CLASIFICAR</label>
+        <value>sin_clasificar</value>
+      </item>
+      <item>
+        <label>ORGÁNICO</label>
+        <value>organico</value>
+      </item>
+      <item>
+        <label>RESIDUO PELIGROSO</label>
+        <value>residuo_peligroso</value>
+      </item>
+      <item>
+        <label>RESIDUO DE MANEJO ESPECIAL</label>
+        <value>rme</value>
+      </item>
+    </select>
+    <upload mediatype="image/*" ref="/SURVEY_MANEJO_RESIDUOS/foto_contenedor">
+      <label>IMAGEN DEL CONTENEDOR</label>
+    </upload>
+    <input ref="/SURVEY_MANEJO_RESIDUOS/observaciones">
+      <label>OBSERVACIONES</label>
+    </input>
+  </h:body>
+</h:html>
